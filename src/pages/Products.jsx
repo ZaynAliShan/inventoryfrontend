@@ -4,10 +4,11 @@ import { DisplayAllProducts, Form, Filters } from "../components";
 import { Link, useLoaderData } from "react-router-dom";
 import axios from "axios";
 import { useProductsContext } from "../context/ProductsProvider";
+const REMOTE_SERVER = "somelink"
 
 export const loader = async () => {
   try {
-    const { data } = await axios.get(`http://localhost:5000/api/v1/products`, {
+    const { data } = await axios.get(`${REMOTE_SERVER}/api/v1/products`, {
       withCredentials: true,
     });
     return data;

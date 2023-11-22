@@ -2,13 +2,14 @@ import React from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Form, redirect, useNavigation } from "react-router-dom";
+const REMOTE_SERVER = "somelink"
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
   try {
-    await axios.post("http://localhost:5000/api/v1/auth/login", data, {
+    await axios.post(`${REMOTE_SERVER}/api/v1/auth/login`, data, {
       withCredentials: true,
     });
     toast.success("User Logged in Successfully");
