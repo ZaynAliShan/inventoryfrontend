@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Form, redirect, useNavigation } from "react-router-dom";
-const REMOTE_SERVER = "somelink"
+const REMOTE_SERVER = "https://invertorybackend.onrender.com"
 
 export const action = async ({ request }) => {
   const formData = await request.formData();
