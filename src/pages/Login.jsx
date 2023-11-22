@@ -12,10 +12,10 @@ export const action = async ({ request }) => {
     await axios.post(`${REMOTE_SERVER}/api/v1/auth/login`, data, {
       withCredentials: true,
     });
-    toast.success("User Logged in Successfully");
+    console.log("User Logged in Successfully");
     return redirect("/");
   } catch (error) {
-    toast.error(error?.response?.data?.msg);
+    console.log(error?.response?.data?.msg);
     return error;
   }
 };
