@@ -13,9 +13,14 @@ export const loader = async () => {
     });
     return data;
   } catch (error) {
-    return error?.response?.data?.msg;
+    // Log the error for debugging purposes
+    console.error(error);
+
+    // Return a more generic error message if the specific message is not available
+    return error?.response?.data?.msg || "An error occurred while loading data.";
   }
 };
+
 
 const AllProducts = () => {
   const { user } = useProductsContext();
